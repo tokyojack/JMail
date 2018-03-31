@@ -1,0 +1,26 @@
+<% include ../partials/general/header.ejs %>
+
+<div class="row">
+    <form action="/reply/<%= email.id  %>" method="post" class="col s12">
+      <div class="row">
+
+           <div class="input-field col s12">
+      
+                    <textarea id="content" name="content" class="materialize-textarea"></textarea>
+          <label for="content">Textarea</label>
+        </div>
+
+ 
+        <div class="row">
+      <div class="center-align">
+
+  <button class="btn waves-effect waves-light btn-large" id="submit" type="submit" name="action">Create
+    <i class="material-icons right">send</i>
+  </button>
+  </div>
+</div>
+
+    </form>
+  </div>
+  
+<% include ../partials/general/footer.ejs %>

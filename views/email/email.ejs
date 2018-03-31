@@ -1,0 +1,21 @@
+<% include ../partials/general/header.ejs %>
+<a href="/inbox">Inbox</a>
+
+<a href="/forward/<%= emailId %>">Forward</a>
+<a href="/delete/<%= emailId %>">Delete</a>
+<a href="/reply/<%= emailId %>">Reply</a>
+
+<h1>Title: <%= email.title %></h1>
+
+<p><%= email.content %></p>
+
+<% if(replies.length >= 1){ %>
+<h1>Replies</h1>
+<% } %>
+
+<% for(var i = 0; i < replies.length; i++){ %>
+<% var reply = replies[i] %>
+    <p>From: <%= reply.name %> - <%= reply.content %></p>
+
+<% } %>
+<% include ../partials/general/footer.ejs %>

@@ -1,0 +1,8 @@
+body {
+    background-color: steelblue;
+}
+
+#headline {
+    background-color: steelblue !important;
+    color: white;
+}

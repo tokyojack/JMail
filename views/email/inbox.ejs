@@ -1,0 +1,54 @@
+<% include ../partials/general/header.ejs %>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">JMail</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+                  <li>Logged in as: <%= user.username %></li>
+
+        <li><a class="waves-effect waves-light btn" href="/compose">Compose</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+<% var duplicateTitles = new Map(); %>
+
+<% for(var i = 0; i < emails.length; i++){ %>
+<% var email = emails[i] %>
+
+    <% if(duplicateTitles.has(email.title)){ %>
+        <% duplicateTitles.set(email.title, duplicateTitles.get(email.title)+1) %>
+    <% } else { %>
+        <% duplicateTitles.set(email.title, 1); %>
+    <% } %>
+
+<% } %>
+
+
+
+      <table class="centered">
+                 <thead>
+          <tr>
+              <th>Eamils</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+
+<% for(var i = (emails.length-1); i >= 0; i--){ %>
+<% var email = emails[i] %>
+
+    <tr><td><a href="/email/<%= email.id %>"><%= email.title %> <%= duplicateTitles.get(email.title) <= 1 ? '' : "("+duplicateTitles.get(email.title)+")" %></a></td></tr>
+            <% duplicateTitles.set(email.title, duplicateTitles.get(email.title)-1) %>
+
+<% } %>
+
+
+
+        </tbody>
+      </table>
+
+
+<% include ../partials/general/footer.ejs %>

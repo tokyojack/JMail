@@ -1,0 +1,36 @@
+<% include ../partials/general/header.ejs %>
+
+<div class="row">
+    <form action="/compose" method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="receiverUsername" type="text" name="receiverUsername" class="validate"  required="" aria-required="true">
+          <label for="receiverUsername">To</label>
+        </div>
+
+        <div class="input-field col s12">
+          <input id="title" type="text" name="title" class="validate"  required="" aria-required="true">
+          <label for="title">Title</label>
+        </div>
+        
+           <div class="input-field col s12">
+      
+                    <textarea id="content" name="content" class="materialize-textarea"></textarea>
+          <label for="content">Textarea</label>
+        </div>
+
+ 
+        <div class="row">
+      <div class="center-align">
+
+  <button class="btn waves-effect waves-light btn-large" id="submit" type="submit" name="action">Create
+    <i class="material-icons right">send</i>
+  </button>
+  </div>
+</div>
+
+    </form>
+  </div>
+  
+
+<% include ../partials/general/footer.ejs %>
