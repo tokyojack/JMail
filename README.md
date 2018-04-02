@@ -1,5 +1,5 @@
 <h2  align="center">JMail</h2>
-<p  align="center">A emailing platform where you can send emails only within the platform</p>
+<p  align="center">A emailing platform where you can send emails to people only within the platform</p>
 
 <br/>
 
