@@ -5,10 +5,10 @@ var flashUtils = require('../../utils/flashUtils');
 
 var redirectLocation = "/";
 
-// URL: "/email"
+// URL: "/reply"
 module.exports = function(pool) {
 
-    // "email.ejs" page
+    // "reply.ejs" page
     router.get("/:id", middleMan.isLoggedIn, function(req, res) {
         pool.getConnection(function(err, connection) {
             if (flashUtils.isDatabaseError(req, res, redirectLocation, err))
@@ -32,7 +32,7 @@ module.exports = function(pool) {
         });
     });
 
-    // "compose.ejs" page post
+    // "reply.ejs" page post
     router.post("/:id", middleMan.isLoggedIn, function(req, res) {
         pool.getConnection(function(err, connection) {
             if (flashUtils.isDatabaseError(req, res, redirectLocation, err))
@@ -61,7 +61,7 @@ module.exports = function(pool) {
                 flashUtils.successMessage(req, res, '/email/' + emailId, 'Successfully replied to the email!');
             });
         });
-
+ca
     });
 
     return router;

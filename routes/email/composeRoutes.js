@@ -9,9 +9,7 @@ var redirectLocation = "/inbox";
 module.exports = function(pool) {
 
     // "compose.ejs" page
-    router.get("/", middleMan.isLoggedIn, function(req, res) {
-        res.render("email/compose.ejs");
-    });
+    router.get("/", middleMan.isLoggedIn, (req, res) => res.render("email/compose.ejs"));
 
     // "compose.ejs" page post
     router.post("/", middleMan.isLoggedIn, function(req, res) {
@@ -35,8 +33,7 @@ module.exports = function(pool) {
                         return;
                     }
                 }
-
-
+                
                 flashUtils.successMessage(req, res, '/inbox', 'Successfully sent the email!');
             });
         });

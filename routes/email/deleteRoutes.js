@@ -3,12 +3,11 @@ var router = require("express").Router();
 var middleMan = require("../../utils/middleMan");
 var flashUtils = require('../../utils/flashUtils');
 
-var redirectLocation = "/";
+var redirectLocation = "/inbox";
 
-// URL: "/email"
+// URL: "/delete"
 module.exports = function(pool) {
 
-    // "email.ejs" page
     router.get("/:id", middleMan.isLoggedIn, function(req, res) {
         pool.getConnection(function(err, connection) {
             if (flashUtils.isDatabaseError(req, res, redirectLocation, err))
