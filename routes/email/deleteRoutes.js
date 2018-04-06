@@ -25,7 +25,6 @@ module.exports = function(pool) {
                flashUtils.successMessage(req, res, '/inbox', "The email was successfully deleted");
             });
         });
-
     });
 
     return router;
