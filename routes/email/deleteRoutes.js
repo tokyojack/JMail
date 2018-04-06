@@ -8,6 +8,7 @@ var redirectLocation = "/inbox";
 // URL: "/delete"
 module.exports = function(pool) {
 
+     // Delete's email from post
     router.get("/:id", middleMan.isLoggedIn, function(req, res) {
         pool.getConnection(function(err, connection) {
             if (flashUtils.isDatabaseError(req, res, redirectLocation, err))
