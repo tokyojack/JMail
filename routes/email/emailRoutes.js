@@ -24,7 +24,6 @@ module.exports = function (pool) {
                 if (flashUtils.isDatabaseError(req, res, redirectLocation, err))
                     return;
 
-
                 var replies = row[0].replies;
 
                 var repliesNew = [];

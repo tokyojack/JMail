@@ -28,15 +28,13 @@ require('./config/passport')(passport, pool);
 //============================= Letting express use them =============================
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 app.use(express.static(__dirname + "/public"));
+
 app.use(flash());
 
 app.use(cookieParser()); // read cookies (needed for auth)
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json());
-
 app.use(session({
     secret: 'RANDOM',
     resave: true,

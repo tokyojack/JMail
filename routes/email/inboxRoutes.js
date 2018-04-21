@@ -25,7 +25,6 @@ module.exports = function(pool) {
                 res.render("email/inbox.ejs", {
                     emails: rows
                 });
-
             });
         });
     });

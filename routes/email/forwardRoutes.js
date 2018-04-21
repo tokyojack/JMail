@@ -32,7 +32,7 @@ module.exports = function (pool) {
         });
     });
 
-    // "forward.ejs" page post
+    //  Submiting the form, forwarding the email to another person
     router.post("/:id", middleMan.isLoggedIn, function (req, res) {
         pool.getConnection(function (err, connection) {
             if (flashUtils.isDatabaseError(req, res, redirectLocation, err))
@@ -48,7 +48,10 @@ module.exports = function (pool) {
 
                 var warning = row[1][0];
 
+                // Check if SQL returned a warning code
                 if (typeof warning !== 'undefined' && typeof warning.Code !== 'undefined') {
+
+                    // Check's if SQL returned an warnign code of 1048 (can't find)
                     if (flashUtils.errorMessageif(req, res, '/compose', (row[1][0].Code == 1048), "That is not a user!"))
                         return;
                 }

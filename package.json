@@ -8,8 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "gitrepo"
+    "url": "https://github.com/tokyojack/JMail"
   },
+  "bugs": {
+    "url": "https://github.com/tokyojack/JMail/issues"
+  },
+  "homepage": "https://github.com/tokyojack/JMail#readme",
   "author": "Jack Clarke",
   "license": "ISC",
   "dependencies": {
